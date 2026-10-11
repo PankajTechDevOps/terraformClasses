@@ -48,6 +48,9 @@ resource "aws_route_table" "name" {
     gateway_id = aws_internet_gateway.name.id
 
   }
+  tags = {
+    Name = "cust-rt"
+  }
 
 }
 
