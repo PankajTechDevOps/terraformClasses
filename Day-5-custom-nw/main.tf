@@ -60,7 +60,7 @@ resource "aws_route_table_association" "name" {
   subnet_id      = aws_subnet.name.id
   route_table_id = aws_route_table.name.id
 
-}
+} 
 
 # Create SG
 
@@ -122,7 +122,6 @@ resource "aws_instance" "pvt" {
   instance_type               = "t3.micro"
   subnet_id                   = aws_subnet.name-2.id
   vpc_security_group_ids      = [aws_security_group.name.id]
-  associate_public_ip_address = true
   tags = {
     Name = "pvt-ec2"
   }
