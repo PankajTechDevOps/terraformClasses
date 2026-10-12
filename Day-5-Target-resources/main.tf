@@ -6,3 +6,8 @@ resource "aws_instance" "dev" {
     Name = "dev"
   }
 }
+
+resource "aws_s3_bucket" "name" {
+  bucket = "pkg-gdhhsdghsjgfsbucket"
+
+}
