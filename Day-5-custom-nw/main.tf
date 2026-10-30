@@ -32,7 +32,7 @@ resource "aws_subnet" "name-2" {
 resource "aws_internet_gateway" "name" {
   vpc_id = aws_vpc.name.id
   tags = {
-    Name = "cust-ig"
+    Name = "cust-igw"
   }
 
 }
