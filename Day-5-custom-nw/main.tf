@@ -9,7 +9,7 @@ resource "aws_vpc" "name" {
 # Create subnet
 resource "aws_subnet" "name" {
   vpc_id            = aws_vpc.name.id
-  cidr_block        = "10.0.0.0/24"
+  cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1a"
   tags = {
     Name = "cust-subnet-1-public"
@@ -19,7 +19,7 @@ resource "aws_subnet" "name" {
 
 resource "aws_subnet" "name-2" {
   vpc_id            = aws_vpc.name.id
-  cidr_block        = "10.0.1.0/24"
+  cidr_block        = "10.0.2.0/24"
   availability_zone = "us-east-1b"
   tags = {
     Name = "cust-subnet-2-private"
