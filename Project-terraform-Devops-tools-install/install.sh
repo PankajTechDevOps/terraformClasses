@@ -15,6 +15,9 @@ sudo yum install jenkins -y
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 
+#--------get password--------------------------
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
 #-------------ubuntu----jenkins install--------------
 sudo apt update
 sudo apt upgrade -y
@@ -31,10 +34,6 @@ sudo systemctl status jenkins --no-pager
 java -version
 sudo ss -lntp | grep 8080
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-
-
-#--------get password--------------------------
-cat /var/lib/jenkins/secrets/initialAdminPassword
 
 # --------------------install terraform --------------------
 
