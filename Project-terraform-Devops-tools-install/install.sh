@@ -14,6 +14,25 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 sudo yum install jenkins -y
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
+--------------------------------------------
+
+
+/* Download Jenkins from the alternative mirror
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum install jenkins -y
+
+# if any issue then follow below commands
+curl -fIL https://mirrors.huaweicloud.com/jenkins/rpm-stable/jenkins-2.580.2-1.noarch.rpm
+curl -fL -o /tmp/jenkins.rpm https://mirrors.huaweicloud.com/jenkins/rpm-stable/jenkins-2.580.2-1.noarch.rpm
+rpm --checksig --verbose /tmp/jenkins.rpm
+sudo dnf install -y /tmp/jenkins.rpm
+sudo systemctl enable --now jenkins
+sudo systemctl status jenkins
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+*/
+
 
 #--------get password--------------------------
 cat /var/lib/jenkins/secrets/initialAdminPassword
